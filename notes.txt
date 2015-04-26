@@ -1,0 +1,116 @@
+Probleme des jeux on considère qu'on en a fini quand :
+- l'histoire est finie
+ET/OU
+- on a fait le tour des mecaniques de jeu en multi ou solo
+
+Quid d'un jeu solo puis multi avec des mecaniques de jeu procedurales a chaque nouvelle partie ?
+
+mecaniques communes ultra simples :
+- score (sert de monnaie)
+- les elements peuvent être upgradés
+- monde limité, cube ? sphere ?  monde découpé en zones, chacune avec 1 nouveauté ou + et un défi annoncé à relever ?
+- Ce sont le contenu & les règles qui doivent s'accumuler, + que le score.
+FAMILIARITY
+
+Le jeu est fini quand... boss vaincu ? objectif global atteint ?
+Les parties ne doivent pas s'eterniser. => ou pas, mais au moins avoir un objectif clairement défini et atteignable, ensuite c’est sandbox.
+
+
+Style graphique au plus simpliste : lignes, formes, aidés via sons et animations + comportements
+
+Carte ? auto remplie ? A rediger soi meme en suivant des elements legers ? Annotations manuelles ?
+
+règles
+regulateur de challenge / mesure de difficulté et ajustements
+DANS L'IDEAL, il faudrait laisser au joueur une commande + dur/+ facile
+chat multi
+quelle liberté donnée au joueur pour créer ?
+
+RESTER SIMPLE
+RESTER SIMPLE
+RESTER SIMPLE
+
+combat : ennemis de + en + coriaces
+# Parties à dev
+
+*1 Moi, mon mouvement, mon menu, mes actions. Selon générateur.
+*2 Le monde fixe, interaction avec moi
+*3 Items du monde, interaction avec moi, et avec le monde fixe
+*4 PNJ, ennemis
+*5 Evaluation difficulté, objectifs, interet
+*6 Boss, fin de partie
+
+RESTER SIMPLE
+RESTER SIMPLE
+RESTER SIMPLE
+
+items, pouvoirs ? domestiquer creature, paralyser, etc
+
+gestion ? ressources ? strategie ? Un mix de tout ca ?
+
+Génération d’items facon Diablo, avec progression
+compatibilité des armes (feu + essence, etc)
+
+compétences, skillset ? perks ? classes ?
+Tout ca progressif, rien au debut et apprentissage en meme temps que generation des règles.
+
+Différentes bases numeriques (base 10, 2, 5, 3..) à la riven ?
+
+Laisser l’utilisateur dessiner lui même ses nombres en mode expert ? Comment forcer une base spécifique  ? 
+
+
+http://userbehavioristics.com/downloads/usingheuristics.pdf
+http://www.sbgames.org/sbgames2013/proceedings/comp/26-full-paper.pdf
+http://www.aaai.org/Papers/AIIDE/2006/AIIDE06-005.pdf
+http://www.minesweeper.info/articles/ScalingDifficultyLevelVideoGames.pdf
+
+Graphe de relations entre les éléments douées de sentiments (colère, affection, jalousie, admiration, dégout, crainte), avec variations selon actions/situations
+
+
+
+You can not load the game from a previous time, this story is over, you will never see her/him/it again.
+=> emotion, pain of loss in videogame
+
+valeurs de surprise, de peur, pour les éléments doués de sentiments
+
+Quelle que sera la camera et mode de mouvement du perso du joueur, on peut deja commencer à programmer ce qui est garanti: positions, destinations, vitesses, quitte a tout faire à la souris pour commencer.
+
+
+
+1234567890
+0987654321
+ABCDEFGHIJ
+IIIIIIIIII
+
+Mecaniques communes :
+
+points de vie			0 = perdu
+mouvement joueur 		commandés par clic (perso tourne vers direction puis avance)
+items				caracteristiques cachées, génération selon autodesign
+sentience 			oui (persos, creatures), ou non (items)
+sentiments des sentients	valeurs (courage, peur, affection, surprise, tristesse)
+graphe				chaque Element sentient a un ensemble de sentiments vis à vis de tout Element (sentient ou non)
+competences/talents		actif ou passif, à choisir selon un choix auto généré, selon score ?
+
+
+Bilan sur les classes :
+Donc un Element est la classe globale de toute chose. Variables : 
+	Boolean sentient
+	Float HP
+
+Sous-classes d’Element : Creature & Item, ont .sentient set par défaut (true, false)
+
+
+un manager de combat (HP, degats, defense)
+un manager d’items (tables de caractéristiques)
+un manager de sentiments/graphe (lit et fait evoluer)
+
+un manageur d’objectifs qui travaille avec :
+un évaluateur de difficulté (combat/ennemis, missions, competences)
+
+Le jeu se comporte d’une dizaine d’objectifs successifs.
+Pour chacun, on réutilise les mecaniques déjà actives + une nouvelle, présentée.
+
+
+	
+
