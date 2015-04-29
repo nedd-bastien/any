@@ -111,6 +111,3 @@ un évaluateur de difficulté (combat/ennemis, missions, competences)
 Le jeu se comporte d’une dizaine d’objectifs successifs.
 Pour chacun, on réutilise les mecaniques déjà actives + une nouvelle, présentée.
 
-
-	
-
