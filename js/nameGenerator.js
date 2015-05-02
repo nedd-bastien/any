@@ -165,9 +165,9 @@ console.log('Tests :');
 for (var i=0; i<30; i++)
 {
     console.log(    
-        generateGenericName(2, "-")+'\t\t\t'+
-        generateGenericName(2, "-")+'\t\t\t'+
-        generateGenericName(2, "-")
+        generateGenericName(2+Math.round(Math.random()), "'")+'\t\t'+
+        generateGenericName(2+Math.round(Math.random()), "'")+'\t\t'+
+        generateGenericName(2+Math.round(Math.random()), "'")
     );
 }
 
