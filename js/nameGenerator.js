@@ -135,7 +135,7 @@ function generateGenericName(syllables, separator)
     var separated = false;
     for (var i = 0; i < numberOfSyllablesInFirstName; i++)
     {
-        firstName += firstNameSyllables[Math.round(Math.random()*firstNameSyllables.length-1)];
+        firstName += firstNameSyllables[Math.floor(Math.random()*firstNameSyllables.length)];
         
 
         if(!separated && i == numberOfSyllablesInFirstName-1 && Math.random()<0.25)
@@ -162,12 +162,12 @@ function generateGenericName(syllables, separator)
 console.log('Tests :');
 
 //test
-for (var i=0; i<10; i++)
+for (var i=0; i<30; i++)
 {
     console.log(    
-        generateGenericName(2, "'")+'\t\t\t'+
-        generateGenericName(2, "'")+'\t\t\t'+
-        generateGenericName(2, "'")
+        generateGenericName(2, "-")+'\t\t\t'+
+        generateGenericName(2, "-")+'\t\t\t'+
+        generateGenericName(2, "-")
     );
 }
 
