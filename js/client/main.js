@@ -21,3 +21,55 @@ p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 
+console.log("");
+console.log("");
+
+//  test viteuf
+
+function goSockets()
+{
+
+	socket.on(
+		'connect',
+		function ()
+		{
+
+			console.log('ON CONNECT (socket)');
+
+			/*
+			 //console.log('channel = '+channel);
+			 console.log("getCookie('channel') = " + getCookie('channel'));
+
+			 if (channel === "")
+			 {
+			 channelAbsent();
+			 }
+
+			 socket.emit(
+			 'setChannel',
+			 {
+			 'cN':   '' + channel,
+			 'type': 'desktop'
+			 }
+			 );
+			 */
+
+			console.log('Envoyé ping !');
+			socket.emit('ping');
+
+		}
+	);
+
+	socket.on('pong', function (data)
+	{
+		console.log('recu : pong !');
+
+	});
+
+}
+
+
+socket = io.connect();
+goSockets();
+
+

@@ -5,17 +5,27 @@
 		<title></title>
 
 		<!--dans l'ordre d'inclusion-->
+		<script src="http://localhost:1337/socket.io/socket.io.js" type="text/javascript"></script>
 
-		<script type="text/javascript" src="js/jsface/jsface.js"></script>
+		<!-- ne sert qu'à aider PhpStorm a connaitre les fonctions de graphlib, qui lui est chargé via NodeJS et require() -->
+		<script type="text/javascript" src="js/libs/graphlib.js"></script>
 
-		<script type="text/javascript" src="js/Constants.js"></script>
-		<script type="text/javascript" src="js/Element.js"></script>
-		<script type="text/javascript" src="js/Creature.js"></script>
-		<script type="text/javascript" src="js/Item.js"></script>
+		<!-- aide pour structure de classes OOP -->
+		<script type="text/javascript" src="js/libs/jsface/jsface.js"></script>
 
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/client/Constants.js"></script>
+		<script type="text/javascript" src="js/client/Element.js"></script>
+		<script type="text/javascript" src="js/client/Creature.js"></script>
+		<script type="text/javascript" src="js/client/Item.js"></script>
+
+		<script type="text/javascript" src="js/client/main.js"></script>
+
+
+
 	</head>
 	<body>
+
+		Body index.html
 
 	</body>
 </html>
