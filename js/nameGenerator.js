@@ -162,7 +162,7 @@ function generateGenericName(syllables, separator)
 console.log('Tests :');
 
 //test
-for (var i=0; i<30; i++)
+for (var i=0; i<25; i++)
 {
     console.log(    
         generateGenericName(2+Math.round(Math.random()), "'")+'\t\t'+
