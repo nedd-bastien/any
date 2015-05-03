@@ -137,6 +137,11 @@ function generateGenericName(syllables, separator)
     {
         firstName += firstNameSyllables[Math.floor(Math.random()*firstNameSyllables.length)];
         
+        //bouffer la derniere voyelle
+        if(separated)
+        {
+            firstName = firstName.substring(0,firstName.length-1);
+        }
 
         if(!separated && i == numberOfSyllablesInFirstName-1 && Math.random()<0.25)
         {
