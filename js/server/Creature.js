@@ -1,5 +1,7 @@
 //Creature extends Element
 
+
+
 var Creature = Class(
 	Element,
 	{
