@@ -18,25 +18,30 @@ var p1 = new Creature(0, 'Bob');
 var p2 = new Creature(1, 'Nestor');
 var table = new Item(2, 'Table');
 
+console.log('HP p1 => ' + p1.HP);
+console.log('HP p2 => ' + p2.HP);
 console.log('HP Table => ' + table.HP);
 console.log("");
 
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p1.dealDamageTo(Math.round(Math.random() * 30), p2);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p2.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p2.dealDamageTo(Math.round(Math.random() * 30), p1);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 
 console.log("");
 console.log("");
+console.log('HP p1 => ' + p1.HP);
+console.log('HP p2 => ' + p2.HP);
+console.log('HP Table => ' + table.HP);
 
 
 //  test viteuf, ceci va COTE CLIENT

@@ -29,8 +29,6 @@ var Element = Class(
 
 			console.log(this.name + " has " + this.HP + " HP left...");
 
-			console.log("");
-
 		},
 
 		dealDamageTo: function (combien, cible)
