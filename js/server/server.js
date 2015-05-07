@@ -84,6 +84,9 @@ io.sockets.on('connection', function (socket)
 
 console.log('APP HAS STARTED ON http://localhost:1337/ ');
 
+
+
+
 //test graphlib
 /*
  var Graph = graphlib.Graph;
@@ -129,4 +132,92 @@ console.log('APP HAS STARTED ON http://localhost:1337/ ');
  // => `[ { v: 'c', w: 'd' } ]`
 
  //fin test
+ */
+
+
+
+
+//tests jsface server
+//Qui manipule les autres classes pour tests
+
+/*	npm install jsface	*/
+var jsface = require("jsface"),
+	Class  = jsface.Class,
+	extend = jsface.extend;
+
+//	http://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
+
+//var fs = require('fs'); //deja fait
+
+//url depuis la racine pour tests sur phpStorm
+//working directory for node : /Users/bastien/Desktop/projet_jeu_git/any/
+//server Js file : js/server/server.js
+eval(fs.readFileSync('./js/server/Constants.js')+'');
+eval(fs.readFileSync('./js/server/Element.js')+'');
+eval(fs.readFileSync('./js/server/Creature.js')+'');
+eval(fs.readFileSync('./js/server/Item.js')+'');
+
+
+var p1 = new Creature(0, 'Bob');
+var p2 = new Creature(1, 'Nestor');
+var table = new Item(2, 'Table');
+
+console.log('HP p1 => ' + p1.HP);
+console.log('HP p2 => ' + p2.HP);
+console.log('HP Table => ' + table.HP);
+console.log("");
+
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p1.dealDamageTo(Math.round(Math.random() * 30), p2);
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p2.dealDamageTo(Math.round(Math.random() * 30), table);
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p2.dealDamageTo(Math.round(Math.random() * 30), p1);
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+p1.dealDamageTo(Math.round(Math.random() * 30), table);
+
+console.log("");
+console.log("");
+console.log('HP p1 => ' + p1.HP);
+console.log('HP p2 => ' + p2.HP);
+console.log('HP Table => ' + table.HP);
+
+
+//  test viteuf, ceci va COTE CLIENT
+
+/*
+
+ function goSockets()
+ {
+
+ socket.on(
+ 'connect',
+ function ()
+ {
+ console.log('ON CONNECT (socket)');
+
+ console.log('Envoyé ping !');
+ socket.emit('ping');
+
+ }
+ );
+
+ socket.on('pong', function (data)
+ {
+ console.log('recu : pong !');
+
+ });
+
+ }
+
+
+ socket = io.connect();
+ goSockets();
+
+
  */
