@@ -137,17 +137,12 @@ var jsface = require("jsface"), Class = jsface.Class, extend = jsface.extend;
 //url depuis la racine pour tests sur phpStorm
 //working directory for node : /Users/bastien/Desktop/projet_jeu_git/any/
 //server Js file : js/server/server.js
-/*
+
 eval(fs.readFileSync('./js/server/Constants.js') + '');
 eval(fs.readFileSync('./js/server/Element.js') + '');
 eval(fs.readFileSync('./js/server/Creature.js') + '');
 eval(fs.readFileSync('./js/server/Item.js') + '');
-*/
-//pour c9
-eval(fs.readFileSync('./Constants.js') + '');
-eval(fs.readFileSync('./Element.js') + '');
-eval(fs.readFileSync('./Creature.js') + '');
-eval(fs.readFileSync('./Item.js') + '');
+
 
 var p1 = new Creature(0, 'Bob');
 var p2 = new Creature(1, 'Nestor');
