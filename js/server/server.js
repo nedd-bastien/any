@@ -1,17 +1,9 @@
-var http = require('http'),
-	url = require('url'),
-	path = require('path'),
-	fs = require('fs'),
-	graphlib = require('graphlib');
+var http = require('http'), url = require('url'), path = require('path'), fs = require('fs'), graphlib = require('graphlib');
 
 var io = require('socket.io');
 
 var mimeTypes = {
-	"html": "text/html",
-	"jpeg": "image/jpeg",
-	"jpg":  "image/jpeg",
-	"png":  "image/png",
-	"js":   "text/javascript",
+	"html": "text/html", "jpeg": "image/jpeg", "jpg": "image/jpeg", "png": "image/png", "js": "text/javascript",
 	"css":  "text/css"
 };
 
@@ -35,8 +27,7 @@ var app = http.createServer(function (req, res)
 
 		                            var fileStream = fs.createReadStream(filename);
 
-		                            fileStream.pipe(
-			                            res);
+		                            fileStream.pipe(res);
 
 	                            }); //end path.exists
                             }).listen(1337);
@@ -66,7 +57,6 @@ io.sockets.on('connection', function (socket)
 
 	});
 
-
 	num_clients++;
 
 	console.log('CLIENT ' + num_clients + ' HAS JUST CONNECTED :-) ');
@@ -83,9 +73,6 @@ io.sockets.on('connection', function (socket)
 });
 
 console.log('APP HAS STARTED ON http://localhost:1337/ ');
-
-
-
 
 //test graphlib
 /*
@@ -141,9 +128,7 @@ console.log('APP HAS STARTED ON http://localhost:1337/ ');
 //Qui manipule les autres classes pour tests
 
 /*	npm install jsface	*/
-var jsface = require("jsface"),
-	Class  = jsface.Class,
-	extend = jsface.extend;
+var jsface = require("jsface"), Class = jsface.Class, extend = jsface.extend;
 
 //	http://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
 
@@ -152,11 +137,10 @@ var jsface = require("jsface"),
 //url depuis la racine pour tests sur phpStorm
 //working directory for node : /Users/bastien/Desktop/projet_jeu_git/any/
 //server Js file : js/server/server.js
-eval(fs.readFileSync('./js/server/Constants.js')+'');
-eval(fs.readFileSync('./js/server/Element.js')+'');
-eval(fs.readFileSync('./js/server/Creature.js')+'');
-eval(fs.readFileSync('./js/server/Item.js')+'');
-
+eval(fs.readFileSync('./js/server/Constants.js') + '');
+eval(fs.readFileSync('./js/server/Element.js') + '');
+eval(fs.readFileSync('./js/server/Creature.js') + '');
+eval(fs.readFileSync('./js/server/Item.js') + '');
 
 var p1 = new Creature(0, 'Bob');
 var p2 = new Creature(1, 'Nestor');
@@ -186,7 +170,6 @@ console.log("");
 console.log('HP p1 => ' + p1.HP);
 console.log('HP p2 => ' + p2.HP);
 console.log('HP Table => ' + table.HP);
-
 
 //  test viteuf, ceci va COTE CLIENT
 
