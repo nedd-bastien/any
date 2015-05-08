@@ -30,7 +30,7 @@ var app = http.createServer(function (req, res)
 		                            fileStream.pipe(res);
 
 	                            }); //end path.exists
-                            }).listen(1337);
+                            }).listen(process.env.PORT); //1337
 
 //TESTS SOCKET.IO
 
@@ -73,6 +73,7 @@ io.sockets.on('connection', function (socket)
 });
 
 console.log('APP HAS STARTED ON http://localhost:1337/ ');
+console.log('or is it '+process.env.IP+' with port '+process.env.PORT);
 
 //test graphlib
 /*
@@ -148,25 +149,11 @@ var p1 = new Creature(0, 'Bob');
 var p2 = new Creature(1, 'Nestor');
 var table = new Item(2, 'Table');
 
- console.log('HP '+p1.name+' => ' + p1.HP);
- console.log('HP '+p2.name+' => ' + p2.HP);
- console.log('HP Table => ' + table.HP);
+console.log('HP '+p1.name+' => ' + p1.HP);
+console.log('HP '+p2.name+' => ' + p2.HP);
+console.log('HP Table => ' + table.HP);
 console.log("");
-/*
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), p2);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p2.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p2.dealDamageTo(Math.round(Math.random() * 30), p1);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-p1.dealDamageTo(Math.round(Math.random() * 30), table);
-*/
+
 var actionInterval = setInterval(randomAction, 1000);
 
 function randomAction()
@@ -201,7 +188,7 @@ else
   var result = attacker.dealDamageTo(1+Math.round(Math.random() * 30), target);
   sendFightResultToClient(result);
   
-  if(table.HP < 0 || p2.HP < 0 || p1.HP < 0)
+  if(table.HP <= 0 || p2.HP <= 0 || p1.HP <= 0)
    fightOver();
  
 }
@@ -232,37 +219,3 @@ function fightOver()
  
  console.log('# sending FIGHT IS OVER.');
 }
-
-//  test viteuf, ceci va COTE CLIENT
-
-/*
-
- function goSockets()
- {
-
- socket.on(
- 'connect',
- function ()
- {
- console.log('ON CONNECT (socket)');
-
- console.log('Envoyé ping !');
- socket.emit('ping');
-
- }
- );
-
- socket.on('pong', function (data)
- {
- console.log('recu : pong !');
-
- });
-
- }
-
-
- socket = io.connect();
- goSockets();
-
-
- */
