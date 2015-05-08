@@ -148,11 +148,11 @@ var p1 = new Creature(0, 'Bob');
 var p2 = new Creature(1, 'Nestor');
 var table = new Item(2, 'Table');
 
-console.log('HP p1 => ' + p1.HP);
-console.log('HP p2 => ' + p2.HP);
-console.log('HP Table => ' + table.HP);
+ console.log('HP '+p1.name+' => ' + p1.HP);
+ console.log('HP '+p2.name+' => ' + p2.HP);
+ console.log('HP Table => ' + table.HP);
 console.log("");
-
+/*
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
@@ -166,12 +166,72 @@ p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p2.dealDamageTo(Math.round(Math.random() * 30), p1);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
 p1.dealDamageTo(Math.round(Math.random() * 30), table);
+*/
+var actionInterval = setInterval(randomAction, 1000);
 
-console.log("");
-console.log("");
-console.log('HP p1 => ' + p1.HP);
-console.log('HP p2 => ' + p2.HP);
-console.log('HP Table => ' + table.HP);
+function randomAction()
+{
+ var attacker;
+ var target;
+ 
+if(Math.random() < 0.5)
+ attacker = p1;
+else
+ attacker = p2;
+ 
+ if(attacker === p1)
+ {
+  if(Math.random() < 0.8)
+   target = p2;
+  else
+  target = table;
+  
+ }
+ 
+  if(attacker === p2)
+ {
+  if(Math.random() < 0.8)
+   target = p1;
+  else
+  target = table;
+  
+ }
+  
+  
+  var result = attacker.dealDamageTo(1+Math.round(Math.random() * 30), target);
+  sendFightResultToClient(result);
+  
+  if(table.HP < 0 || p2.HP < 0 || p1.HP < 0)
+   fightOver();
+ 
+}
+
+function sendFightResultToClient(result)
+{
+ if(result == -1)
+  return;
+ 
+ //target involved + its current HP
+ 
+ console.log('# sending results : '+result.name+' new HP value => '+result.HP);
+ console.log('');
+ 
+}
+
+
+function fightOver()
+{
+ clearInterval(actionInterval);
+ 
+ 
+ console.log("");
+ console.log("Fight is over.");
+ console.log('HP '+p1.name+' => ' + p1.HP);
+ console.log('HP '+p2.name+' => ' + p2.HP);
+ console.log('HP Table => ' + table.HP);
+ 
+ console.log('# sending FIGHT IS OVER.');
+}
 
 //  test viteuf, ceci va COTE CLIENT
 

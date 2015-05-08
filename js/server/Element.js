@@ -28,6 +28,7 @@ var Element = Class(
 			}
 
 			console.log(this.name + " has " + this.HP + " HP left...");
+			
 
 		},
 
@@ -40,10 +41,12 @@ var Element = Class(
 			{
 				console.log(cible.name + " est deja detruit.");
 
-				return;
+				return -1;
 			}
 
 			cible.receiveDamage(combien);
+			
+			return {'name':cible.name, 'HP':cible.HP};
 
 		},
 
