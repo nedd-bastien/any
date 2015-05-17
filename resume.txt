@@ -1,0 +1,33 @@
+
+COTE SERVEUR
+
+    generation monde et creatures associées : pour le proto, on peut dejà générer en dur le set du monde + creatures et comportements,mais DANS la structure qu'il faut déjà caler.
+    
+    PLUS TARD sauvegarde, via JSON ?
+    PLUS TARD gestion de graphe? mais pas besoin de graphes individuels pour commencer.
+
+COTE CLIENT
+
+    structure de comportement : besoins, talents, sentiments individuels locaux
+    boucle de comportement individuels
+    gestionnaire de population : maintien chaque population dans une certaine fourchette
+    boucle de rendu                                                         
+    
+    
+        
+    PLUS TARD interface pour consulter toutes les variables
+    PLUS TARD système en prise en main et enregistrement IDEE/macro ? 
+    + indication de decouvertes recettes prévues
+    + pour les recettes imprevues,peut etre generer des resultats aleatoires selon des tables de chance et des combinaisons prévues comme étant bonnes ou non. (ex; poudre a canon a 5% de chance d'etre obtenable par un association de 2 any poudres existantes.)
+    
+    ca veut dire que pour chaque element existant et combinaison de 2 d'entre eux, on doit prévoir un resultat selon un % de chance que ce resultat EXISTE (rien à voir avec la chance de reussir la manip à chaque essai)
+    
+    PLUS TARD sauvegarde vers serveur (on n'a qu'a pas sauvegarder les positions et els etats par contre, juste le 'savoir commun' et les valeurs individuelles (sentiments, talents) pour rester en terrain connu.
+    
+DONC PREMIER PROTO
+
+- structure de données en jeu (elements, terrain, fonctionnements par espece)
+- simulation autonome des elements mis en place
+- jeu de données simple : 1 seule race, caractéristiques choisies en dur dans une liste. Population de 10 individus. Nourriture: fruit bleu. Monde : carré plat de 100 par 100. Les créatures ont Energie, Faim, Sommeil. Vitesse constante. Sommeil augmente quoi qu'il arrive.La faim augmente avec le temps selon la taille de l'estomac. En mangeant, energie augmente et faim descend.
+L'individu a une occupation active : sleeping/looking for food/eating/idling.
+Les plantes à fruit bleus sont un Item du monde, qui générent X fruits par X minutes (aussi un Item).
