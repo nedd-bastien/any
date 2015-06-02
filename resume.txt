@@ -28,6 +28,8 @@ DONC PREMIER PROTO
 
 - structure de données en jeu (elements, terrain, fonctionnements par espece)
 - simulation autonome des elements mis en place
-- jeu de données simple : 1 seule race, caractéristiques choisies en dur dans une liste. Population de 10 individus. Nourriture: fruit bleu. Monde : carré plat de 100 par 100. Les créatures ont Energie, Faim, Sommeil. Vitesse constante. Sommeil augmente quoi qu'il arrive.La faim augmente avec le temps selon la taille de l'estomac. En mangeant, energie augmente et faim descend.
+- jeu de données simple : 1 seule race, caractéristiques choisies en dur dans une liste. Population de 10 individus. Nourriture: fruit bleu. Monde : carré plat de 100 par 100. Les créatures ont Energie, Faim, Sommeil. Vitesse constante. Sommeil augmente quoi qu'il arrive. La faim augmente avec le temps selon la taille de l'estomac. En mangeant, energie augmente et faim descend.
 L'individu a une occupation active : sleeping/looking for food/eating/idling.
 Les plantes à fruit bleus sont un Item du monde, qui générent X fruits par X minutes (aussi un Item).
+
+cf la bd de donald ? picsou ? avec des pommes et des roues et un debut d'inventions.
