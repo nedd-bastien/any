@@ -1,7 +1,7 @@
 
 COTE SERVEUR
 
-    generation monde et creatures associées : pour le proto, on peut dejà générer en dur le set du monde + creatures et comportements,mais DANS la structure qu'il faut déjà caler.
+    generation monde et creatures associées : pour le proto, on peut dejà générer en dur le set du monde + creatures et comportements,mais A UTILISANT la structure qu'il faut déjà caler.
     
     PLUS TARD sauvegarde, via JSON ?
     PLUS TARD gestion de graphe? mais pas besoin de graphes individuels pour commencer.
